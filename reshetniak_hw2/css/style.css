@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    }
+
+.tree :first-child{
+        color: pink;
+}
+
+a[href^='https://'],
+.blockquote,
+.tree :only-child{
+    color: red;
+}
+
+.list :nth-child(4){
+    color: blue;
+}
+
+a{
+    color: inherit;
+}
+
+.holder ul + p{
+    font-size: 26px;
+}
+
+#greycol{
+    color: gray;
+}
+
+.yellow{
+    color: yellow;
+}
+
+.tree :nth-child(7){
+    color: green;
+}
+
+ .bg-box{
+    height: 600px;
+    background-color: green;
+    background-image: url(https://www.freeiconspng.com/uploads/lamp-png-0.png),
+     url(https://www.freeiconspng.com/uploads/grass-png-images-pictures-transparent-28.png),
+     url(https://img2.goodfon.ru/wallpaper/big/0/5b/pole-zelen-trava-dom-derevya.jpg), url(https://vignette.wikia.nocookie.net/mashaandthebear/images/e/e0/%D0%81%D0%B6%D0%B8%D0%BA.png/revision/latest?cb=20180209130328&path-prefix=ru),
+    url(https://avatanplus.com/files/resources/mid/58eb07b830eab15b56162788.png);
+    background-position:left top, left bottom, center, left top, right top;
+    background-repeat:repeat-x, repeat-x, no-repeat, repeat-y, repeat-y;
+    background-size:50px, 250px, 600px, 50px 50px, 50px 50px;
+}   
+
+ /* .bg-box{
+    height: 600px;
+    background-color: blue;
+    background-size: 50px;
+    background-image: url(https://www.freeiconspng.com/uploads/lamp-png-0.png);
+    background-position: left top;
+    background-repeat: repeat-x;
+    
+}   */

@@ -1,0 +1,44 @@
+ *{
+    box-sizing: border-box;
+}
+
+.box{
+    height: 220px;
+    width: 350px;
+    padding: 15px 10px 20px;
+    margin: 30px;
+    border:dashed 2px red;
+}
+
+.box p{
+    height: 181px;
+    width: 326px;
+    background-color: green;
+    margin: 0px;
+}
+
+.text{
+    width: 800px;
+    display: block;
+    padding: 20px;
+}
+
+.text img{
+    float: left;
+    width: 300px; 
+    padding: 0px 20px 20px 0px;
+}
+
+.lorem img{
+    width: 200px; 
+    float: right;
+    padding: 20px 0px 20px 20px;
+}
+
+.text p{
+    text-align: justify;
+    font-size: 18px;
+    margin: 0;
+    font-family: 'PT Serif', 'Lora', serif;
+}
+

@@ -1,0 +1,437 @@
+*,
+::before,
+::after{
+    box-sizing: border-box;
+}
+/* *{
+    font-size: 18px;
+    line-height: 1.77;
+    color: #221818 ;
+    font-family: 'Montserrat', sans-serif;
+} */
+a{
+    text-decoration: none;
+} 
+ul{
+    list-style-type: none;
+} 
+h5{
+  color: #fd1c18;
+  line-height: 1.5;
+  font-weight: 700;
+  margin: 0;
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0 auto;
+    overflow:hidden;
+} 
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #e7e9eb;
+    font-size: 18px;
+    line-height: 1.77;
+    color: #221818 ;
+    font-family: 'Montserrat', sans-serif;
+}
+.header{
+    display: flex;
+    min-height: 70px;
+    align-items: center;
+} 
+.bg-header{
+    position: absolute;
+    width: 100%;
+    height: 70px;
+}
+
+.logo img{
+    display: flex;
+    width: 70px;
+}
+.logo{
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+
+}
+#menu__toggle {
+    opacity: 0;
+  }
+  
+  /* стилизуем кнопку */
+  .menu__btn {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center;  /* центрируем содержимое кнопки */
+    position: absolute;
+    right: 25px;
+    width: 25px;
+    cursor: pointer;
+    z-index: 7;
+}
+/* добавляем "гамбургер" */
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+}
+.menu__btn > span{
+    top: -15px;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+/* контейнер меню */
+.menu__box {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    text-align: center;
+    background-color: #10072b;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    z-index: 6;
+  }
+  
+   /* элементы меню */
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #e7e9eb;
+  }
+  .menu__item:hover {
+    background-color: rgb(124, 130, 133);
+  }
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    opacity: 0.8;
+    right: 0;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    transition-duration: .25s;
+  }
+  .menu__box {
+    transition-duration: .25s;
+  }
+  .menu__item {
+    transition-duration: .25s;
+  }
+
+  /* MAIN */
+.main{
+    flex-grow: 1;
+
+}
+
+.wood{
+    display: flex;
+    min-height: 400px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/bg-wood.jpg);
+    background-size: cover;
+}
+.wood h1{
+    margin: 0;
+    color: #fff;
+    font-weight: 400;
+    font-family: 'Courgette', cursive;
+    font-style: italic;
+    line-height: 1.13;
+    font-size: 46px;
+    padding: 0 0 20px;
+} 
+.wood p{
+    display: flex;
+    max-width: 800px;
+    color:#fff ;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* CONTENT */
+
+.content{
+    padding:  0 15px;
+    background: url(../images/bg-texture.png);
+}
+.content ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  padding: 40px 0 0 ;
+  margin: 0 auto; 
+}
+.content li{
+  flex-basis: 47%;
+}
+.content img{
+  width: 100%;
+  object-fit: cover;
+}
+.wine{
+  order: 2;
+}
+.content > :nth-child(2){
+  align-items: flex-start;
+}
+.beers{
+  width: 200px;
+  border: solid 2px black;
+  margin: 0;
+  padding: 5px 10px;
+  transition-duration: 0.3s;
+   
+}
+.beers:hover{
+  border: none;
+  background: #10072b;
+  border-radius: 10px;
+  color: #e7e9eb;
+  
+}
+.beers:hover a{
+  color: #e7e9eb;
+}
+
+/* FORM */
+
+.form{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 30px;
+}
+.form div{
+  padding: 15px 0 0;
+}
+.form input,
+.form textarea{
+  width: 500px;
+  border: 1px solid #9c9c9c;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 5px 10px;
+}
+.form textarea{
+  min-height: 200px;
+}
+
+.submit button{
+  min-width: 175px;
+  border: solid 2px black;
+  transition-duration: 0.3s;
+}
+.submit button:hover{
+  border: none;
+  background: #10072b;
+  border-radius: 10px;
+  color: #e7e9eb;
+}
+
+/* FOOTER */
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: solid 1px #65abab;
+  padding: 5px 20px;
+
+}
+
+.logo_ft img{
+  width: 70px;
+  margin: 0 65px 0 0;
+}
+.contact{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact p{
+  margin: 0 auto;
+}
+.contact h5{
+  padding: 0 0 10px;
+}
+.contact span{
+  border: solid 1px #fd1c18;
+  padding: 0 10px;
+  font-weight: 700;
+  margin: 10px;
+  transition-duration: 0.3s;
+}
+.contact a{
+  color: #221818;
+}
+.contact span:hover{
+  border: none;
+  background: #10072b;
+  border-radius: 10px;
+}
+.contact span:hover a{
+  color: #e7e9eb;
+}
+
+
+
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?ayb9im');
+  src:  url('../fonts/icomoon.eot?ayb9im#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?ayb9im') format('truetype'),
+    url('../fonts/icomoon.woff?ayb9im') format('woff'),
+    url('../fonts/icomoon.svg?ayb9im#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak-as: normal;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+
+.icon-google:before {
+  content: "\e902";
+}
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+
+.icons ul{
+  display: flex;
+  padding: 0;
+}
+
+.icons li{
+  background: #10072b;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 5px;
+  transition-duration: 0.3s;
+}
+
+.icons a{
+  display: flex;
+  color: #e7e9eb;
+}
+.icons li:hover{
+  background-color: #e7e9eb;
+  border: 1px solid #10072b ;
+
+}
+.icons li:hover a{
+  color: #10072b;
+}
+
+
+/* MEDIA */
+
+@media (max-width: 800px) {
+.logo img{
+    padding: 0 0 0 20px;
+}
+.logo{
+    position: absolute;
+    right: 100%;
+    transform: translateX(100%);
+}
+.content ul{
+  flex-direction: column;
+  padding: 20px 0 0 ;
+}
+.content > :nth-child(2){
+  align-items: center;
+  padding: 0 0 20px;
+}
+.wine{
+  order: 0;
+}
+.beers{
+  margin: 0; 
+}
+.form input,
+.form textarea{
+  min-width: 300px;
+}
+.footer{
+  flex-direction: column;
+}
+.logo_ft img{
+  width: 60px;
+  margin:0 auto;
+}
+.wood h1{
+  margin: 0 auto;
+  padding: 20px 0 ;
+} 
+}
+
+@media (max-width: 400px) {
+  .wood h1{
+    font-size: 32px;
+}
+.form input,
+.form textarea{
+  min-width: 250px;
+}
+.form textarea{
+  min-height: 100px;
+}
+}
