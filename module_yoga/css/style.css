@@ -93,7 +93,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin: 0 auto;
+    overflow: hidden;
 } 
 a{
     text-decoration: none;
@@ -104,23 +104,20 @@ ul{
 body{
     width: 100%;
     height: 100%;
-    font-size: 14px;
-    line-height: 1.2;
-    font-family:'Open Sans','Lato',sans-serif;
+    font: 14px/1.2 'Open Sans','Lato',sans-serif ;
     color: #555555;
 }
 /* HEADER */
-
-.container{
-    padding: 0 15px;
-}
 .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1170px;
+    max-width: 1200px;
     min-height: 100px;
     margin: 0 auto;
+    width: 100%;
+    padding: 0 15px;
+    overflow: hidden;
 }
 
 .logo img{
@@ -138,6 +135,7 @@ body{
 .menu__item {
     color: #555555;
     font-weight: 700;
+    color: inherit;
 }
 .menu__item::after {
     content: '';
@@ -148,6 +146,19 @@ body{
     height: 1px;
     background:#5363db;
     opacity: 0;
+    
+}
+.active {
+    color: #5363db;
+}
+.active::after{
+    content: '';
+    display: block;
+    position: relative;
+    left: 25%;
+    width: 50%;
+    height: 1px;
+    background:#5363db;
 }
 
 #menu__toggle {
@@ -180,6 +191,7 @@ body{
     background-position: center;
     background-size: cover;
     display: flex;
+    padding: 20px 15px;
 } 
 .class,
 .slogan{
@@ -250,7 +262,7 @@ body{
     font-size: 48px;
     text-transform: uppercase;
     line-height: 1.5;
-    padding: 0 0 23px 5px;
+    padding: 0 100px 23px 5px;
     margin: 0;
 }
 .slogan h6{
@@ -258,9 +270,10 @@ body{
     font-family: FREESCPT;
     font-weight: 400;
     line-height: 1.2;
-    padding: 0 0 0 5px;
+    padding: 0 100px 0 5px;
     margin: 0;
 }
+
 
 /* CLASSES */
 .classes{
@@ -268,29 +281,32 @@ body{
     max-width: 1200px;
     flex-direction: column;
     align-items: center;
-    padding: 0 ;
+    padding: 120px 0 190px ;
     margin: 0 auto;
 }
 .classes h1{
+    text-align: center;
+}
+h1 {
     font-size: 30px;
     color: #5b6ceb;
-    padding: 120px 15px 5px;
-    text-align: center;
+    padding: 0 15px 5px;
     margin: 0 15px;
+    text-transform: uppercase;
+
 }
-.classes h2{
+h2 {
     font-size: 41px;
     color: #777777;
     font-family: 'FREESCPT';
     font-weight: 400;
-    margin: 0;
-    padding: 0 0 65px;
+    margin: 0 0 65px;
 }
 .sheet{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 0 0 190px;
+    padding: 0 ;
 }
 .health {
     display: flex;
@@ -299,6 +315,8 @@ body{
     border-radius: 7px;
     box-shadow:8px 8px 10px rgba(0,0,0, 0.15);
     margin: 0 0 25px;
+    border-radius: 10px;
+    overflow: hidden;
     transition-duration: 0.5s;
 }
 .health:hover{
@@ -412,12 +430,9 @@ body{
     max-width: 470px;
     padding: 15px 25px 15px 0 ;
 }
-.sl_text h3{
-    color: #5b6ceb;
-    font-size: 30px;
-    text-transform: uppercase;
-    margin: 0;
-    padding: 0 0 5px;
+.sl_text h1{
+    margin: 0 0 10px;
+    padding: 0 ;
 }
 .sl_text p{
     line-height: 1.6;
@@ -429,16 +444,16 @@ body{
     position: relative;
     margin: 0 ;
     box-shadow:8px 8px 10px rgba(0,0,0, 0.15);
-    transition-duration: 0.5s;
+    border-radius: 10px;
 }
 .sl_sl img{
     width: 100%;
     min-height: 300px;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .sl_sl:hover{
-    transform: scale(1.1);
     box-shadow:0 0 20px #5363db;
 }
 .sl_sl:hover .slick-next,
@@ -518,7 +533,7 @@ body{
     flex-wrap: wrap;
     max-width: 1200px;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding: 0 ;
     margin: 0 auto;
     z-index: 2;
@@ -552,18 +567,19 @@ body{
     object-fit: cover;
     padding: 10px;
 }
-.feture >:nth-child(2){
-    min-height: 50px;
+.feture h4{
+    /* min-height: 50px; */
     margin: 25px 0 15px;
 }
 
 
 .feture h4{
+    min-height: 50px;
     font-size: 18px;
     text-transform: uppercase;
     line-height: 1.5;
     padding: 0;
-    margin: 0;
+    margin: 25px 0 15px;
 } 
 
 .feture p{
@@ -583,13 +599,10 @@ body{
     background-position: right bottom;
 
 }
-.price_49,
-.price_69,
-.price_99{
+.price{
     display: flex;
     flex-direction: column;
     width: 370px;
-    min-height: 495px;
     border-radius: 10px;
     overflow: hidden;
     background: #ffffff;
@@ -597,9 +610,7 @@ body{
     margin:  15px;
     transition-duration: 0.5s;
 }
-.price_49:hover,
-.price_69:hover,
-.price_99:hover{
+.price:hover{
     transform: scale(1.1);
     box-shadow:0 0 30px #5363db;
 
@@ -612,33 +623,43 @@ body{
     align-items: center;
     background-color: #5b6ceb;
     color: #ffffff;
-    margin: 0; 
-    padding: 0 0 0 30px; 
-}
-.size >:nth-child(1){
-    display: flex;
-    font-size: 32px;
-    font-weight: 700;
-    
-}
-.size >:nth-child(2){
-    display: flex;
-    left: 10px;
+    margin: 0;  
     font-size: 67px;
     font-weight: 700;
-    padding: 0 10px 0 15px;
-    
 }
-.size >:nth-child(3){
+.size span{
     display: flex;
+    position: relative;
+    min-width: 85px;
+}
+.size span::before{
+    content: '$';
+    font-size: 32px; 
+    position: absolute; 
+    left: -50%;
+    top: 25%; 
+}
+.size span::after{
+    content: '/ month';
+    text-transform: uppercase;
     font-size: 18px; 
     font-weight: 400;
-    height: 60px;
-    align-items: flex-end;
+    min-width: 90px;
+    position: absolute;
+     margin: 10px 0 0 0; 
+    left: 80px;
+    top: 50%;   
+} 
+.date{
+    display: flex;
+    justify-content: center;
+    padding: 25px;
 }
+
 .timetable{
     margin: 0;
-    padding: 25px 70px  20px;
+    min-width: 230px;
+    padding: 0;
 }
 .timetable li::after {
     content: '';
@@ -678,7 +699,7 @@ body{
 .pos_bt{
     width: 100%;
     text-align: center;
-    padding: 15px 0 25px;
+    padding: 10px 0 50px;
 }
 
 /* FOOTER */
@@ -720,7 +741,8 @@ body{
     
 }
 .icon a:hover{
-    color: #555555;
+    transform: scale(1.5);
+    color: #10072b;
 }
 .about p{
     margin: 0;
@@ -756,8 +778,11 @@ body{
     transition-duration: 0.3s;
 }
 .contacts_nav a:hover{
-    color: #555555;
+    color: #10072b;
 }
+
+
+ 
 .icon-location2::before{
     position: absolute;
     font-size: 20px;
@@ -794,6 +819,12 @@ body{
 
 
 /* MEDIA */
+
+@media (max-width: 1130px){
+    .slogan h5{
+        padding: 0 0 23px 5px;
+    }
+}
 
  @media (max-width: 960px) {
     .sheet{
@@ -849,9 +880,9 @@ body{
     .menu__box {
         display: block;
         position: absolute;
-        visibility: hidden;
-        top: 0;
-        right: -100%;
+        visibility: hidden ;
+        top: -100%;
+        right: 0;
         width: 300px;
         height: 100%;
         margin: 0;
@@ -873,24 +904,34 @@ body{
         background-color: #ffffff;
         color: #5363d8;
       }
+      #menu__toggle{
+          right: 25px;
+          top: 30px;
+          width: 30px;
+          height: 30px;
+      }
       #menu__toggle:checked ~ .menu__btn > span {
         transform: rotate(45deg);
+        background-color: #fff;
       }
       
       #menu__toggle:checked ~ .menu__btn > span::before {
         top: 0;
         transform: rotate(0);
+        background-color: #fff;
       }
       
       #menu__toggle:checked ~ .menu__btn > span::after {
         top: 0;
         transform: rotate(90deg);
+        background-color: #fff;
       }
       
       #menu__toggle:checked ~ .menu__box {
         visibility: visible;
         opacity: 0.8;
-        right: 0;
+        width: 300px;
+        top: 0; 
       }
       .menu__btn > span,
       .menu__btn > span::before,
@@ -902,6 +943,9 @@ body{
       }
       .menu__item {
         transition-duration: .4s;
+      }
+      .active::after{
+        display: none;
       }
     
 
@@ -998,7 +1042,14 @@ body{
         text-align: center;
         color: #ffffff;
         padding: 0 25px 25px ;
-    }   
+    } 
+    .slogan h5{
+        padding: 0 0 25px 0;
+    }
+    .slogan h6{
+        padding: 0 0 35px;
+        
+    }  
 }
 
 @media (max-width: 540px){
@@ -1060,4 +1111,22 @@ body{
     .sl {
         padding: 20px 15px;
     }
+    .size span{
+        font-size: 50px;
+    }
+    .size{
+        min-height: 100px;
+    }
+    .size span::before{
+        font-size: 26px;
+        left: -35%;
+    }
+    .size span::after{
+        font-size: 16px;  
+        left: 60px;
+      
+    } 
+    .pos_bt{
+        padding: 10px 0 30px;
+    }   
 }
